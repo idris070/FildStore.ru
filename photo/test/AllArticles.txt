@@ -1,0 +1,22 @@
+<h3>Статьи</h3>
+<table class="table">
+    <thead>
+    	<th>№</th>
+		<th>Заголовок</th>
+        <th>Текст</th>    
+    </thead>
+    <tbody>
+    	<?
+		$i=1;
+        foreach ($articles as $v)
+		{
+    	echo "<tr>";
+        	echo "<td>".$i."</td>";
+            echo "<td>".$v['name']."</td>";
+            echo "<td>".$v['text']."</td>";
+        echo "</tr>";
+		$i++;
+		}
+		?>
+    </tbody>
+</table>

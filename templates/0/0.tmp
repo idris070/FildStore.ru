@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+<?
+session_start();
+?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title><?php echo $head["title"];?></title>
+	<?php get_css();?>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="<?php echo $tmp_dir; ?>/csss/box.css" />
+<link rel="stylesheet" type="text/css" href="one.css" />
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link rel="stylesheet" href="<?php echo $tmp_dir; ?>/prefix.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<?php echo $tmp_dir; ?>/style.css" type="text/css" media="screen, projection" />
+
+	<script src="<?php echo $tmp_dir; ?>/js/jquery.js"></script>
+	<script type="text/javascript" src="<?php echo $tmp_dir; ?>/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="<?php echo $tmp_dir; ?>/js/jcarousellite.js"></script>
+	<script type="text/javascript" src="<?php echo $tmp_dir; ?>/js/login.js"></script>
+ 	<script src="<?php echo $tmp_dir; ?>/js/script.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#tooTop").click(function(a){a.preventDefault();var b=this.href;var c=b.split("#");var d=c[1];var e=$("#"+d).offset();var f=e.top;$('html, body').animate({scrollTop:f},900)});
+		});
+	</script>
+
+
+
+
+
+
+
+	<link href="<?php echo $tmp_dir; ?>css/styles.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="<?php echo $tmp_dir; ?>css/prettyPhoto.css" media="screen" rel="stylesheet" type="text/css" />
+
+	<script src="<?php echo $tmp_dir; ?>js/prettyPhoto.js"></script>
+	<script src="<?php echo $tmp_dir; ?>js/script.js"></script>
+	<style type="text/css">
+   img{border:0px;}
+  </style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		$("a[rel^='prettyPhoto']").prettyPhoto({opacity:0.2, deeplinking: false, show_title:false, animation_speed: 'fast',social_tools: '',theme: 'light_square',gallery_markup: ''});});
+	</script>
+
+	<script type="text/javascript">
+function show_content() {
+$.get("last_sale.php", "", function (data){
+$('#last_sale').html(data); }); }
+
+setInterval(function() {
+$.get("last_sale.php", "", function (data){
+$('#last_sale').html(data); }); }, 60000);
+
+show_content();
+</script>
+</head>
+
+<body id="page">
+<noscript><div id="noscript">Внимание, для полнценной работы сайта, нужно включить <b>JavaScript!</b></div></noscript>
+<!--[if lte IE 7]><div id="ie">Внимание, ваш браузер устарел. Корректная работа сайта не гарантируется!</div><![endif]-->
+<div id="wrapper">
+	<header id="header">
+		<div class="logotype">
+			<h1><a href="/"><img src="<?php echo $tmp_dir; ?>/images/logo.png" alt="Тайтл сайта" /></a></h1>
+			<p class="legend">Интернет-магазин</p>
+		</div>
+
+<form action="search.php" method="get">
+
+
+			<div class="search">
+<?php
+if(isset($GET["q"]) && !empty($GET["q"])) {
+echo $_GET["q"];
+echo  "<input type=\"text\" name=\"q\" id=\"search_input\" maxlength=\"40\" value=".$GET["q"]." />"; }
+else {echo "<input type=\"text\" name=\"q\" id=\"story\" maxlength=\"40\"  />";}
+?>
+<input type="submit" id="searchSend" value="Поиск" />
+	</div>
+</form>
+	</header>
+
+<nav id="nav" class="nav">
+		<div class="navContent">
+				<ul>
+				<li><a href="/">Главная</a></li>
+				<li><a href="about.php">О магазине</a></li>
+				<li><a href="payment.php">Способы оплаты</a></li>
+				<li><a href="voprosy.php">Вопросы</a></li>
+			</ul><div class="myProfile"><a id="openForm" href="#">FAQ</a></div>
+			</ul><div class="myProfile"><a id="openForm" href="reg.php">Регистрация</a></div></div>
+		<div id="profilePopup">
+			<div class="popupContent">
+			<!--content-->
+		<h2>Здесь приведены наиболее частые вопросы и ответы на них:</h2><br><br>
+<font color="green">Вопрос: </font>Как мне купить товар?</p>
+<font color="red">Ответ: </font>Авторизируйтесь и после этого в разделе "Навигация по категориям" выберите категорию, выбрав определенный товар нажмите купить и выберите способ оплаты!</p><br>
+<font color="green">Вопрос: </font>Как я получу товар после оплаты?</p>
+<font color="red">Ответ: </font>Как только Вы оплатите товар, он придет на вашу учетную запись. Также Ваши покупки можете посмотреть <a href="buy_history.php">тут</a></p><br>
+<font color="green">Вопрос: </font>Есть какие-либо гарантия на предоставляемый товар?</p>
+<font color="red">Ответ: </font>На ключи/гифты гарантия пожизненная. На аккаунты и т.п. гарантия только на момент продажи<br><br>
+<font color="green">Вопрос: </font>Если я часто покупаю у Вас товар, могу ли я получить скидку?</p>
+<font color="red">Ответ: </font>Да, практически на весь товар предоставляются скидки в зависимости от кол-ва совершенных Вами покупок<br> (на данный момент в разработке)<br><br>
+<font color="green">Вопрос: </font>Я купил аккаунт, но не могу войти в него, что делать?</p>
+<font color="red">Ответ: </font>Вы можете связаться с нами для решения данной проблемы<br><br>
+		<!--/content-->
+			</div>
+		</div>
+	</nav>
+
+	<script type="text/javascript">
+	$(function(){
+		$(".slides").jCarouselLite({
+			visible: 1,
+			btnNext: ".next",
+			btnPrev: ".prev",
+			speed: 500
+		});
+
+		$(".minislides").jCarouselLite({
+			visible: 1,
+			auto: 3000,
+			speed: 900
+		});
+	});
+	</script>
+	<div class="sliders">
+		<div class="bigSlider">
+			<div class="slides">
+				<ul>
+					<li><img src="<?php echo $tmp_dir; ?>/temp/2.jpg" alt="" /><p>Не похож на других...</p></li>
+					<li><img src="<?php echo $tmp_dir; ?>/temp/2.jpg" alt="" /><p>Но похож на медведя...</p></li>
+					<li><img src="<?php echo $tmp_dir; ?>/temp/2.jpg" alt="" /><p>Не похож на других...</p></li>
+					<li><img src="<?php echo $tmp_dir; ?>/temp/2.jpg" alt="" /><p>Но похож на медведя...</p></li>
+				</ul>
+			</div>
+			<div class="next">Вперёд</div>
+			<div class="prev">Назад</div>
+		</div>
+
+
+		<div class="miniSlider">
+			<div class="minislides">
+				<ul>
+					<li><img src="<?php echo $tmp_dir; ?>/temp/3.jpg" alt="" /><p>Battlefield 3</p></li>
+					<li><img src="<?php echo $tmp_dir; ?>/temp/4.jpg" alt="" /><p><a href="#">Battlefield 3</a></p></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<section id="middle">
+		<div class="middleContent">
+				<div id="container">
+<aside id="side" style="float:left;">
+					<div class="block">
+						<h3>Связь с администрацией</h3>
+						<ul class="categories">
+<center><b><span style="color:#169b1; text-shadow: 0px 0px 2px #100b1;"><br>JLeGiOH_070<br></span></b><br>
+<img src="<?php echo $tmp_dir; ?>/i/soc_share/vkontakte.jpg" alt="VK"> <a href="http://vk.com/idris070">idris070</a><br>
+<img src="<?php echo $tmp_dir; ?>/images/skype.png" alt="Skype"> idris0701<br>
+<img src="<?php echo $tmp_dir; ?>/i/soc_share/moj_mir.jpg" alt="mail"> idris_kurbanov@mail.ru<br><br>
+Тех. поддержка 24/7</center><br>
+						</ul>
+					</div>
+					<div class="block">
+						<h3>Навигация по категориям</h3>
+						<?php
+						include ('bd.php');
+						$strSQL = "SELECT * FROM tovar";
+						$rs = mysql_query($strSQL);
+						$num_psn=0;
+							while($row = mysql_fetch_array($rs)) {
+								// проверка на кол-во
+								$res = mysql_query("SELECT COUNT(*) FROM tovar_num WHERE id_tovar=$row[id]");
+								$row_num = mysql_fetch_row($res);
+								$num_tovar = $row_num[0]; // всего записей
+								if($row_num[0]>0){
+									$num_psn++;
+								}}
+						?>
+						<ul class="categories">
+							<li><a href="index.php">PlayStation (PSN) <span>(<?php echo $num_psn;?>)</span></a></li>
+						</ul>
+					</div>
+
+<div class="block">
+						<h3>Гарантии магазина</h3>
+						<ul class="categories">
+							<center>WMID: 309429240938 <a href=""><img border="0" src="https://stats.wmtransfer.com/Levels/pWMIDLevel.aspx?wmid=309429240938&w=35&h=18&bg=0XDBE2E9" alt="BL уровень"></a></center>
+							<center><a href="https://passport.webmoney.ru/asp/certView.asp?wmid=309429240938"target="_blank"><img src="https://passport.webmoney.ru/images/bat130.png" title="Персональный аттестат"></a></center>
+						</ul>
+					</div>
+					<div class="block">
+						<h3>Рекомендуемый товар</h3>
+						<ul class="categories">
+							<center>
+<!-- последняя продажа -->
+<div></div>
+<!-- /последняя продажа --> </br>
+							<a href="/goods.php?idd=0000000"><img border="0" src="<?php echo $tmp_dir; ?>/pic/cs.jpg" alt="Купить STEAM аккаунт CS 1.6" width="210" height="90"></a><br><br>
+							<a href="/goods.php?idd=0000000"><img border="0" src="<?php echo $tmp_dir; ?>/pic/34.jpg" alt="Купить STEAM аккаунт Counter-Strike: Source" width="210" height="90"></a><br><br>
+							<a href="/goods.php?idd=0000000"><img border="0" src="<?php echo $tmp_dir; ?>/pic/Tomb.jpg" alt="Купить STEAM аккаунт Call of Duty: Modern Warfare 3" width="210" height="90"></a><br><br></center>
+						</ul>
+					</div>
+				</aside>
+<aside id="side">
+
+				<div class="block">
+				<h3 align="center"	>Учетная запись</h3>
+				<form action="" method=POST>
+
+				<?
+
+				$login = $_POST['login'];
+				$password = $_POST['password'];
+				if ($_POST['logout']){
+				session_unset();
+				}
+
+		if ($_POST[action]==login){
+		include ('bd.php');
+		$result = mysql_query("SELECT * FROM users WHERE login='$login'");
+		$myrow = mysql_fetch_array($result);
+		if (empty($myrow['password'])){$text1=true;}
+		else { if ($myrow['password']==$password){
+			$_SESSION['login']=$myrow['login'];
+			$_SESSION['password']=$myrow['password'];
+			$_SESSION['email']=$myrow['email'];
+			$_SESSION['seller']=$myrow['seller'];
+			$_SESSION['admin']=$myrow['admin'];
+			$_SESSION['id']=$myrow['id'];
+			}
+		else {$text2=true;}}}
+
+			if (!isset($_SESSION['login'])) {
+				 echo '	<table>
+					<input type="hidden" name="action" value="login"/>
+				<td align="right"><div class="blockreg">
+				<br>Логин:<br>
+				<br>Пароль:
+					</div>
+					<td><div class="blockreg2">
+					<input value=""  name="login"/><br>
+					<div class="ots">
+					<input value="" type="password" name="password"/>
+					</div>
+					</div>
+					<input type="submit" value="войти" name="submit"/>
+					</table>';}
+				else {
+				echo "Добро пожаловать $_SESSION[login]";
+				echo '
+				<a href="profile.php"><button type="button" name="button" class="enjoy-css">Профиль</button></a>
+				<a href="tovar.php"><button type="button" name="button" class="enjoy-css">Товары</button></a>
+				<a href="buy_history.php"><button type="button" name="button" class="enjoy-css">Список покупок</button></a>
+				<input type="submit" value="Выйти" name="logout" class="enjoy-css"/>';
+				}
+
+				if($text1){echo("Такого пользователя нет.");}
+				if($text2){echo("Неверный пароль.");}
+
+//	echo "<pre>";
+//	print_r ($_SESSION);
+//	echo "</pre>";
+				?>
+
+					</form>	</div>
+
+					<div class="block">
+						<h3>Скачать дистрибуты</h3>
+						<ul class="categories">
+							<center><a href="http://cdn.steampowered.com/download/SteamInstall.msi"><img border="0" src="<?php echo $tmp_dir; ?>/images/steam1.png" alt="Скачать STEAM"></a></center>
+							<center><a href="http://www.dm.origin.com/download"><img border="0" src="<?php echo $tmp_dir; ?>/images/origin.png" alt="Скачать ORIGIN"></a></center>
+						</ul>
+					</div>
+					<div class="block">
+						<h3>Группа ВКонтакте</h3>
+						<ul class="categories">
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?79"></script>
+
+
+						</ul>
+					</div>
+
+										<div class="block">
+						<h3>Способы оплаты</h3>
+						<ul class="categories">
+							<center><a href="/payment.php"><img border="0" src="<?php echo $tmp_dir; ?>/images/pay.png" alt="Способы оплаты товара"></a>
+							<form action="type_rate.php" method="post">
+Валюта:&nbsp;
+<?php get_type_rate($GLOBALS["default_rt"]);?>
+</form></center>
+						</ul>
+					</div>
+				</aside>
+
+					<div id="content">
+				<article class="news">
+							<div class="newsContent">
+
+									<div class="newsText"><?php show_content(); ?></div>
+
+						</article>
+						<div class="pageScroller">
+							<a id="tooTop" href="#page">Наверх</a>
+						</div>
+					</div>
+
+
+
+				</div>
+		</div>
+	</section>
+
+
+	<nav id="navFooter" class="nav">
+		<div class="navContent">
+		<ul>
+				<li><a href="/">Главная</a></li>
+				<li><a href="about.php">О магазине</a></li>
+				<li><a href="payment.php">Способы оплаты</a></li>
+				<li><a href="voprosy.php">Вопросы</a></li>
+			 				<li><a href="responses.php">Отзывы</a></li>
+			</ul>
+		</div>
+	</nav>
+	<footer id="footer">
+		<p class="copyright"><b>FildStore.Ru</b> &copy; 2015<br />
+		Интернет-магазин <div style="display:none;">
+        By: <a href="http://Mydigiseller.Ru/">Mydigiseller.Ru</a></div>
+
+
+		<div class="footerElement">
+			<ul class="counters">
+				<li><a href="https://passport.webmoney.ru/asp/certView.asp?wmid=309429240938"><img src="http://www.webmoney.ru/img/icons/88x31_wm_v_blue_on_white_ru.png" alt="Персональный аттестат" /></a></li>
+				<li><a href="http://www.megastock.ru/"><img src="http://www.webmoney.ru/img/icons/88x31_wm_blue_on_transparent_ru.png" alt="MegaStock" /></a></li>
+			 <li></li>
+</ul>
+
+			<ul class="social">
+				<li><a href="http://vk.com/"><img src="<?php echo $tmp_dir; ?>/images/vk.png" alt="Мы Вконтакте" /></a></li>
+			</ul>
+		</div>
+	</footer>
+
+
+</div>
+</body>
+</html>

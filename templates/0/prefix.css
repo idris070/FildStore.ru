@@ -1,0 +1,109 @@
+#header {-moz-border-radius:5px 5px 0 0;-webkit-border-radius:5px 5px 0 0;}
+#footer {-moz-border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px;}
+.search #story, .addComment input, .addComment textarea {-moz-border-radius:3px;-webkit-border-radius:3px;}
+.bigSlider,.miniSlider, .middleContent {-moz-border-radius:2px;-webkit-border-radius:2px;}
+.news, .newsImage, .newsImage img, .block, .block h3 , .bigTitle, .lastComments li, .commentContent {-moz-border-radius:5px;-webkit-border-radius:5px;}
+
+
+.search #story:focus, .addComment textarea:focus,.addComment li:first-child input:focus {-moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);-webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);}
+#header {box-shadow:inset 0 0 0 1px #fff;}
+.middleContent {-moz-box-shadow:inset 0 0 0 1px #fff;-webkit-box-shadow:inset 0 0 0 1px #fff;}
+.categories {-moz-box-shadow:0 1px 0 0 #fff;-webkit-box-shadow:0 1px 0 0 #fff;}
+.speedbar {-moz-box-shadow:inset 0 -1px 0 0 #fff;-webkit-box-shadow:inset 0 -1px 0 0 #fff;}
+.fullLink,.pageScroller {-moz-box-shadow:inset 0 1px 0 0 #fff;-webkit-box-shadow:inset 0 1px 0 0 #fff;}
+
+
+
+.search #story, .bigSlider p,.addComment textarea,.addComment li:first-child input {-moz-transition:all 0.5s linear;-webkit-transition:all 0.5s linear;-o-transition:all 0.5s linear;}
+.navContent > ul  li a,.myProfile a {-moz-transition:all 0.3s ease;-webkit-transition:all 0.3s ease;-o-transition:all 0.3s ease;}
+.social li a {-moz-transition:opacity 0.3s ease;-webkit-transition:opacity 0.3s ease;-o-transition:opacity 0.3s ease;}
+
+.addComment textarea {-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-ms-box-sizing:border-box;}
+
+#blureBox {filter:alpha(opacity=70)}
+/*---BB коды---*/
+ /* различие bbcodes и bbcodes_poll исключительно в длине кнопки */
+/* класс bbcodes используем в списке персональных сообщений (pm.tpl) и по умолчанию в модуле редактора сообщений*/
+.bbcodes, .bbcodes_poll {
+    background: #fff url("../images/bbcodes.png") repeat-x 0 100%;
+    text-shadow: 0 1px 0 #fff;
+    border: 1px solid #b3b3b3;
+    color: #383838;
+    padding: 2px 9px 5px 9px;
+    margin-bottom: 2px !important;
+    height: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -moz-box-shadow: 0 1px 4px -3px black;
+    -webkit-box-shadow: 0 1px 4px -3px black;
+    box-shadow: 0 1px 4px -3px black;
+}
+
+.bbcodes:hover, .bbcodes_poll:hover {
+    background-position: 0 10px;
+}
+
+.bbcodes_poll {
+    width: 100px;
+}
+
+.editor textarea {
+    font-family: Verdana;
+    word-spacing: 0.1em;
+    letter-spacing: 0;
+    line-height: 1.5em;
+    font-size: 11px;
+    color:#000;
+    background: #fff url("../images/fields.png") repeat-x;
+    border: 0 none;
+}
+
+.editor input[type="text"] {
+    padding: 2px;
+    background: #fff url("../images/fields.png") repeat-x;
+    border: 1px solid #bcc0c2;
+}
+
+.editor_button {
+    float: left;
+    cursor: pointer;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.editor_buttoncl {
+    float: left;
+    cursor: pointer;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-left: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+}
+
+.editbclose {
+    float: right;
+    cursor: pointer;
+    display: none;
+}
+
+.editor_button select {
+    font-size: 11px;
+}
+
+.editor_button img {
+    margin: 0;
+    padding: 0;
+}
+
+.editbclose img {
+    margin: 0;
+    padding: 0;
+}
+
+.editor_button_brk img {
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,6 @@
+<h3>Добавить новую статью</h3>
+<div class="alert alert-error" id="error" style="display:none">Ошибка валидации формы!</div>
+<div class="progress progress-striped active" style="display:none;" id="loading"><div class="bar" style="width: 100%;"></div></div>
+<input id="name" type="text" placeholder="Название" />
+<textarea id="text" rows="5" class="span5"></textarea>
+<button class="btn btn-primary" id="sendAjax">Добавить статью!</button>

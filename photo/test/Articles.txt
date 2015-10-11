@@ -1,0 +1,16 @@
+<?php defined('SYSPATH') or die('No direct script access.');
+
+class Controller_Articles extends Controller_Template {	
+
+	public function action_index()
+	{	
+		$data = array();
+
+		$articles = new Model_Articles();
+        $data['articles'] = $articles->getArticles();  // берем массив статей из модели
+
+		$this->template->articles = View::factory('AllArticles',$data); // и отправляем его в вид
+		$this->template->addarticle = View::factory('AddArticle'); // также рендерим форму добавления новых статей
+	}
+
+}

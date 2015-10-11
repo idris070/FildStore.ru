@@ -1,0 +1,104 @@
+/* ниже  */
+
+
+ul.products{
+    padding: 0px 0 0 0px;	
+}
+ul.products li{
+    list-style: none;
+    width: 200px;
+    height: 123px;
+    background: #252525;
+    border: 3px solid #252525;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    margin: 0 0 13px 8px;
+    position: relative;
+    float: left;	
+}
+ul.products li:hover{
+    border: 3px solid #35ADD6;
+}
+ul.products li img{
+    width: 200px;
+    height: 100px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    float: left;	
+}
+ul.products li a{
+    color: #ffffff;
+   
+    font-family: Verdana;
+    font-size: 12px;
+    margin: 0 0 4px;
+    text-align: center;
+    text-decoration: none;
+    width: 200px;
+}
+ul.products li p{
+    background: #35ADD6;
+    font-family: Verdana;
+    font-size: 12px;
+    color: #000;
+    padding: 5px;
+    -moz-border-radius: 5px 0 5px 0;
+    -webkit-border-radius: 5px 0 5px 0;
+    -khtml-border-radius: 5px 0 5px 0;
+    border-radius: 5px 0 5px 0;
+    position: absolute;
+    bottom: 23px;
+    right: 0;	
+}
+ul.menu__products{
+    height: 30px;
+    background: #3b3b3b;
+}
+ul.menu__products li{
+    list-style: none;
+    margin: -1px 0 0 0;
+    float: left;
+}
+ul.menu__products li a{
+    height: 23px;
+    font-family: Verdana;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 7px 10px 0 10px;
+    float: left;
+}
+
+ul.menu__products li.ui-state-active{
+    height: 30px;
+    background: #4d9f16;
+}
+ul.menu__products li.ui-state-active a{
+    height: 36px;
+    background: url(../images/arrow.png) 50% 30px no-repeat ;
+}
+ul.menu__products li.active,
+ul.menu__products li:hover{
+    height: 36px;
+    background: url(../images/arrow.png) 50% 30px no-repeat ;
+}
+ul.menu__products li.active a,
+ul.menu__products li:hover a{
+    background: #4d9f16;
+}
+ul.menu__products li:hover.ui-state-active a{
+    height: 23px;
+    background: #4d9f16;
+}
+.information ol{
+    margin: 0 0 0 20px;
+}
+
+.information ul{
+    margin: 0 0 0 20px;
+}
